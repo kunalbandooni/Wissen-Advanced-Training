@@ -1,0 +1,50 @@
+package com.example.Controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.Product.Product;
+
+@RestController
+public class Controller {
+	
+	// GET ALL PRODUCT
+	@GetMapping(value="/all")
+	List<Product> getAllProducts() {
+		return new List<Product>();
+	}
+	
+	// GET PRODUCT BY ID
+	@GetMapping(value="/get/{id}")
+	Product getAllProducts(int id) {
+		Product p = new Product();
+		
+		return p;
+	}
+	
+	// CREATE A NEW PRODUCT
+	@PostMapping(value="/add")
+	String addProduct() {
+		//Product p = new Product();
+		return "Added";
+	}
+	
+	// DELETE AN EXSISTING PRODUCT
+	@DeleteMapping(value="/delete/{id}")
+	String deleteProduct() {
+		
+		return "DELETED";
+	}
+	
+	// GET A PRODUCT FROM MULTIPLE MANUFACTURERS AND RETURN THEM IN ORDER OF RATING
+	@GetMapping(value="/getFromProduct")
+	List<Product> getFromManufacturer(){
+		List<Product> list;
+		return list
+	}
+}

@@ -1,0 +1,8 @@
+package Suite;
+
+@RunWith(Suite.class)
+@SuiteClasses((ExpectedException.class, App.class))
+
+public class SuiteRunner {
+
+}

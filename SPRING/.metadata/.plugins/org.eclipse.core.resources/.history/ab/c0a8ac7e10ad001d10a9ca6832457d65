@@ -1,0 +1,48 @@
+package JUnitTest3;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import JUnitTest.JUnitTest.App;
+
+public class TearDownFunction {
+	@BeforeClass
+	public static void beforeAll() {
+		System.out.print("INITIALIZING");
+	}
+	
+	public int add(int a, int b){
+        return a + b;
+	}
+
+	@Test
+	public void addTest1(){
+		TearDownFunction testobj = new TearDownFunction();
+		int result = testobj.add(10, 20);
+		
+		assertEquals(30, result);
+	}
+	
+	@Test
+	public void addTest2() {
+		TearDownFunction testobj = new TearDownFunction();
+		int result = testobj.add(40, 50);
+		assertEquals(90, result);
+	}
+	
+	@Test
+	public void addTest3() {
+		TearDownFunction testobj = new TearDownFunction();
+		int result = testobj.add(20, 80);
+		assertEquals(100, result);
+	}
+	
+	@AfterClass
+	public static void afterAll() {
+		System.out.print("DESTRUCTION");
+	}
+}

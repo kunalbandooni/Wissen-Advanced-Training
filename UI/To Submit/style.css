@@ -1,0 +1,104 @@
+/*-------------------------------- STUFF --------------------------*/
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 93.75%;
+}
+html ::selection {
+  color: #ffffff;
+  background: #272727;
+}
+body {
+    background-color: #235620;
+    color: #69D015;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+#myVideo {
+    z-index: -1;
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    align-self: center;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+header{
+    align-content: center;
+    text-align: center;
+}
+.home-main{
+    opacity: 0.1;
+}
+.home-main:hover {
+    opacity: 1.0;
+    color: #9AF153;
+}
+a{
+    color: #9AF153;
+    text-decoration: none;
+    padding: 0 4rem;
+}
+.menu, a {
+    display: flex;
+    align-self: right;
+    justify-content: space-between;
+}
+a:hover{
+    color: whitesmoke;
+}
+.address {
+    padding: 15px;
+}
+
+.container{
+    padding: 50px;
+}
+
+table{
+    align-self: center;
+}
+th{
+    height: 50px;
+}
+tr{
+    width: 50px;
+}
+.nav-item {
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: #235620;
+    border: 0px;
+    color: #9AF153;
+    transition: 0.25s linear;
+    font-weight: inherit;
+}
+.nav-item:hover {
+    background-color: rgb(112, 216, 9);
+    border: 1px solid #044883;
+    color: whitesmoke;
+    font-weight: bold;
+    transition: 0.6s;
+    filter: drop-shadow(3px 3px 3px gray);
+    transform: scale(1.1);
+}
+button {
+    padding: 10px 20px;
+    background-color: #235620;
+    border: 0px;
+    color: #9AF153;
+    transition: 0.25s linear;
+    font-weight: inherit;
+}
+button:hover {
+    background-color: rgb(112, 216, 9);
+    border: 1px solid #044883;
+    color: whitesmoke;
+    font-weight: bold;
+    transition: 0.6s;
+    filter: drop-shadow(3px 3px 3px gray);
+    transform: scale(1.1);
+}

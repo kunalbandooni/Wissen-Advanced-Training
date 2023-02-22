@@ -1,0 +1,56 @@
+package com.example.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.Product.Product;
+import com.example.ProductRepository.*;
+
+@RestController
+public class Controller {
+	
+	// Use this object to use methods of Repository
+	@Autowired
+	ProductRepository productObject;
+	
+	// GET ALL PRODUCT
+	@GetMapping(value="/all")
+	List<Product> getAll() {
+		List<Product> list = productObject.getAllProducts();
+		return list;
+	}
+	
+	// GET PRODUCT BY ID
+	@GetMapping(value="/get/{id}")
+	Product getAllProducts(int id) {
+		Product p = productObject.getProduct(id);
+		return p;
+	}
+	
+	// CREATE A NEW PRODUCT
+	@PostMapping(value="/add")
+	String addProduct() {
+		
+		
+		return "Added";
+	}
+	
+	// DELETE AN EXSISTING PRODUCT
+	@DeleteMapping(value="/delete/{id}")
+	String deleteProduct() {
+		
+		return "DELETED";
+	}
+	
+	// GET A PRODUCT FROM MULTIPLE MANUFACTURERS AND RETURN THEM DISPLAY IN ORDER OF RATING
+	@GetMapping(value="/getFromProduct")
+	List<Product> getFromManufacturer(){
+		List<Product> list;
+		return list;
+	}
+}

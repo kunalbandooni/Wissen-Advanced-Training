@@ -1,0 +1,15 @@
+package Suite;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+import JUnitTest.JUnitTest.App;
+import JUnitTest2.ExpectedException;
+
+@RunWith(Suite.class)
+@SuiteClasses({ExpectedException.class, App.class})
+
+public class SuiteRunner {
+
+}

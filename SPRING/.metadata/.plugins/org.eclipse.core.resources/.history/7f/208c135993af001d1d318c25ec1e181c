@@ -1,0 +1,24 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ProductAppApplication {
+
+	/*
+	 * SpringBoot question : 
+		Product Class - name, Description, productid, manufacturer, rating, price
+		1. Get all products 
+		2. Get product by Id
+		3. Create a new Product
+		4. Delete an existing product
+		5. Get a particular product from multiple manufacturers and return them in the order of rating.
+	 * 
+	 * */
+	
+	public static void main(String[] args) {
+		SpringApplication.run(ProductAppApplication.class, args);
+	}
+
+}

@@ -1,0 +1,5 @@
+package JUnitTest3;
+
+public class TearDownFunction {
+
+}

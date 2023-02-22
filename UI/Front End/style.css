@@ -1,0 +1,106 @@
+div
+{
+	padding: 25px;
+}
+/* CSS - 2 started... */
+body
+{
+ 	background-color:aliceblue;
+ 	background: url(Images/bg.jpg);
+}
+a:link    
+{
+	color:#0000ff;  
+}
+a:visited 
+{
+	color:#000000;  
+}
+a:hover   
+{
+	color:#00ff00;  
+}
+a:active
+{
+	color:#ff0000;  
+}
+img
+{
+	float : right;
+}
+p::first-line
+{
+	color:blue;
+}
+p::first-letter
+{
+	color: red;
+	font-size: xx-large;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+	float:left;
+}
+li>a
+{
+	display:block;
+	width:110px;
+	background-color:#dddddd;
+}
+div.img {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #0000ff;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+	 display: inline;
+}	
+div.img{
+   
+    margin: 5px;
+    border: 1px solid #ffffff;
+}
+div.img a:hover img {
+    border: 1px solid #0000ff;
+}
+div.desc {
+  text-indent: 10px;
+  border: 1px solid #0000ff;
+  text-align: left;
+  font-weight: normal;
+  width: 250px;
+  margin: 5px;
+}
+.try{
+	opacity: 0.5;
+}
+@media screen {
+    p {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 14px;
+    }
+}
+@media print {
+    p {
+        font-size: 20px;
+        color: blue;
+    }
+}
+input[type=text] {
+    width: 150px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: yellow;
+}
+input[type=password] {
+    width: 150px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: yellow;
+}

@@ -1,0 +1,150 @@
+.container {
+     max-width: fit-content;
+     padding: 0px;
+}
+
+html {
+     scroll-behavior: smooth;
+}
+
+body {
+     color: #666666;
+     font-size: 14px;
+     font-family: 'Raleway', sans-serif;
+     font-weight: normal;
+}
+
+a, button{
+     -webkit-transition: all .5s ease-in-out;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*--- LOGO ---*/
+
+.logo{
+     float: left;
+}
+
+
+/*--- NAVIGATION BAR ---*/
+
+.topnav a {
+  float: left;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.topnav a:hover {
+  background-color: black;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+/*--- CAROUSELS ---*/
+
+.carousel-indicators .active {
+    background-color: #2980b9;
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-height: 460px
+}
+
+.carousel-control {
+    width: 0;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+     opacity: 1;
+     filter: alpha(opacity=100);
+     background-image: none;
+     background-repeat: no-repeat;
+     text-shadow: none;
+}
+
+.carousel-control.left span {
+     padding: 15px;
+}
+
+.carousel-control.right span {
+     padding: 15px;
+}
+
+/*--- CARDS ---*/
+
+.card-body > p{
+     color: orangered;
+     font-size: 15px;
+     line-height: 20px;
+     font-weight: bold;
+}
+
+table{
+     margin-bottom: 30px;
+}
+
+.container-cards{
+     background-color: cadetblue;
+     /*margin: 10px;*/
+     padding: 4px;
+}
+
+.container-cards > .container > h1{
+     color: black;
+}
+
+.card-text{
+     color: orangered;
+}
+
+/*--- CONTACT US ---*/
+
+#contact{
+     background-color: greenyellow;
+     /*margin: 10px;*/
+}
+
+/*--- FORM ---*/
+
+.left-column {
+    background-color: #0003;
+    margin: 20px;
+    padding: 30px;
+}
+
+.form-group > label{
+     color: whitesmoke;
+}
+
+/*--- MAP ---*/
+
+.right-column{
+     margin: 20px;
+     padding: 30px;
+}
+
+
+/*--- FOOTER ---*/
+
+.footer {
+     background: #252525;
+}
+
+.copyright p {
+     color: #fff;
+     font-size: 17px;
+     line-height: 22px;
+     text-align: center;
+     padding-top: 13px;
+     font-weight: normal;
+}

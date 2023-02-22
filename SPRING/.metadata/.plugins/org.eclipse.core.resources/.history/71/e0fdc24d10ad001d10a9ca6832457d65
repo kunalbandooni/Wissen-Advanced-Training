@@ -1,0 +1,8 @@
+package JUnitTest3;
+
+public class TearDownFunction {
+	@BeforeClass
+	public static void beforeAll() {
+		System.out.print("INITIALIZING");
+	}
+}

@@ -1,0 +1,38 @@
+package JUnitTest.JUnitTest;
+
+/**
+ * Hello world!
+ *
+ */
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class App 
+{
+
+
+	public class Test1{
+
+	public String login(String UserId, String Password){
+	        if(UserId.equals("Kunal") && Password.equals("Admin")    
+	               return "Valid User";
+	         else
+	               return "Invalid User";
+	}
+
+	@Test
+	public void loginTest(){
+	     Test1 testobj = new Test1();
+	     String result = testobj.login("Kunal", "Admin");
+
+	     assertEquals("Valid User", result);
+
+	}
+
+	private void assertEquals(String string, String result) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	}
+}
