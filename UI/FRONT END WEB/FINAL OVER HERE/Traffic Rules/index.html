@@ -15,7 +15,7 @@
     <!-- Hero section -->
     <section id="infinite" class="text-white tm-font-big tm-parallax">
       <!-- Navigation -->
-      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">              
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav" style="padding: 0px;">              
         <div class="container">   
           <div class="tm-next">
               <a href="#infinite" class="navbar-brand"><img src="img/logo.jpg" height="70px" width="auto"></a>
@@ -33,10 +33,10 @@
                   <a class="nav-link tm-nav-link" href="#service">Services</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#content">Content</a>
+                  <a class="nav-link tm-nav-link" href="#content">Traffic Rules</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="">Customers</a>
+                  <a class="nav-link tm-nav-link" href="https://linktr.ee/kbandooni1">About the Author</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link tm-nav-link" href="#contact">Contact Us</a>
@@ -128,15 +128,15 @@
                           Keeping our family and ourselves <span style="color: green; font-weight: bold;">safe</span> from others is also now our responsibility. This brings the need to learn more about Traffic Rules.
                         </p>
                           
-                        
-                        <div class="next-page-btn">
-                          <a href="content.html" class="tm-intro-text tm-btn-primary">Learn More...</a>
-                        </div>
 
                     </div>
                 </div>
                 </div>
-            </div><!-- third row -->
+                <div class="next-page-btn" style="display: flex;align-items: center;justify-content: center;">
+                          <a href="content.html" class="tm-intro-text tm-btn-primary">Traffic Rules</a>
+                </div>
+            </div>
+            <!-- third row -->
         </div>
     </section>
 
@@ -213,6 +213,15 @@
         }
 
         return _offset;
+      }
+
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            document.getElementById("tmNav").style.background = "#181818";
+        } else {
+            document.getElementById("tmNav").style.background = "none";
+        }
       }
 
       function setParallaxPosition($doc, multiplier, $object){
