@@ -17,7 +17,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	@Query(value="select * from product_details where product_id = ?1", nativeQuery=true)
 	public Product getProductById(int id);
 	
-	// DELETE AN EXSISTING PRODUCT - somehow, not working
+	// DELETE AN EXSISTING PRODUCT
 	//@Query(value="delete from product_details where product_id = ?1", nativeQuery=true)
 	//public void deleteById(int id);
 	

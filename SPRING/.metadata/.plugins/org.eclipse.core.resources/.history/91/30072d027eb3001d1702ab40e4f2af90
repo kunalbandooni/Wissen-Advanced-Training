@@ -16,9 +16,9 @@ public class ProductAppApplication {
 		5. Get a particular product from multiple manufacturers and return them in the order of rating.
 	 * 
 	 * 
-	 *  I had to look at application.properties, @RequestBody, @PathVariable of JpaRepository
+	 *  I had to look at application.properties, @RequestBody, @PathVariable and .save() method of JpaRepository
 	 *  For some reason, it is not working... Also not giving error T-T
-	 *  get method made, but not given correct name XD
+	 *  get method made, but not given correct name T-T
 	 * */
 	
 	public static void main(String[] args) {

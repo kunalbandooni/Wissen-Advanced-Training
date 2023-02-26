@@ -50,8 +50,6 @@ public class Controller {
 	 * 
 	 * 
 	 * */
-	
-	// Do not let add same id
 	@PostMapping(value="/add")
 	public String addProduct(@RequestBody Product newProduct) {
 		productObject.save(newProduct);
