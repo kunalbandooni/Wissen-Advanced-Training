@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TIMER</title>
+</head>
+
+<body>
+    <section style="align-content: center;">
+        <button onclick="start()">START</button>
+        <button onclick="stop()">STOP</button>
+        <button onclick="reset()">RESET</button>
+        <br>
+        <br>
+        <div><input type="text" id="timer-head" value="0"></div>
+    </section>
+    <script>
+        let counter = 0;
+        let timeout;
+        let timer_on = 0;
+
+        function timer() {
+            document.getElementById("timer-head").value = counter;
+            counter++;
+            timeout = setTimeout(timer, 1000);
+        }
+
+        function start() {
+            if (!timer_on) {
+                timer_on = 1;
+                timer();
+            }
+        }
+
+        function stop() {
+            clearTimeout(timeout);
+            timer_on = 0;
+        }
+
+        function reset() {
+            counter = 0;
+            document.getElementById("timer-head").value = counter;
+        }
+    </script>
+</body>
+
+</html>
+
+</html>

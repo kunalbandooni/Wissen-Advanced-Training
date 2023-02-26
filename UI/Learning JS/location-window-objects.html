@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LOCATION WINDOW OBJECTS DEMO</title>
+</head>
+
+<body>
+    <h1>ALL THE LOCATION WINDOW OBJECTS WILL BE PUT HERE...</h1>
+    <br><br>
+    <h5>HASH</h5>
+    <p id="hash"></p>
+    <br><br>
+    <h5>HOST</h5>
+    <p id="host"></p>
+    <br><br>
+    <h5>HOSTNAME</h5>
+    <p id="hostname"></p>
+    <br><br>
+    <h5>HREF</h5>
+    <p id="href"></p>
+    <br><br>
+    <h5>ORIGIN</h5>
+    <p id="origin"></p>
+    <br><br>
+    <h5>PATHNAME</h5>
+    <p id="pathname"></p>
+    <br><br>
+    <h5>PORT</h5>
+    <p id="port"></p>
+    <br><br>
+    <h5>PROTOCOL</h5>
+    <p id="protocol"></p>
+    <br><br>
+    <h5>SEARCH</h5>
+    <p id="search"></p>
+    <br><br>
+    <script>
+        // I will be trying all functions right here... 
+
+        // Hash 
+        let hash_temp = window.location.hash;
+        document.getElementById("hash").innerHTML = hash_temp;
+
+        // Host
+        let host_temp = window.location.host;
+        document.getElementById("host").innerHTML = host_temp;
+
+        // Hostname
+        let hostname_temp = window.location.hostname;
+        document.getElementById("hostname").innerHTML = hostname_temp;
+
+        // Href
+        let href_temp = window.location.href;
+        document.getElementById("href").innerHTML = href_temp;
+
+        // Origin
+        let origin_temp = window.location.origin;
+        document.getElementById("origin").innerHTML = origin_temp;
+
+        // Pathname
+        let pathname_temp = window.location.pathname;
+        document.getElementById("pathname").innerHTML = pathname_temp;
+
+        // Port
+        let port_temp = window.location.port;
+        document.getElementById("port").innerHTML = port_temp;
+
+        // Protocol
+        let protocol_temp = window.location.protocol;
+        document.getElementById("protocol").innerHTML = protocol_temp;
+
+        // Search
+        let search_temp = window.location.search;
+        document.getElementById("search").innerHTML = search_temp;
+    </script>
+</body>
+
+</html>

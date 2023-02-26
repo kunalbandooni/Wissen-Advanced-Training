@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TIMER</title>
+</head>
+
+<body>
+    <section style="align-content: center;">
+        <h1>Work in Progress...</h1>
+        <button onclick="start()">START</button>
+        <button onclick="stop()">STOP</button>
+        <button onclick="reset()">RESET</button>
+        <br>
+        <br>
+        <div>
+            <span id="hours">00:</span>
+            <span id="minutes">00:</span>
+            <span id="seconds">00</span>
+        </div>
+    </section>
+    <script>
+        let h = 0,
+            m = 0,
+            s = 0;
+        let timeout;
+
+        function timer() {
+            timeout = setTimeout(function() {
+                document.getElementById("timer-head ").value = counter;
+                counter++;
+            }, 1000);
+        }
+
+        function start() {
+            timer();
+        }
+
+        function stop() {
+            clearTimeout(timeout);
+        }
+
+        function reset() {
+            counter = 0;
+        }
+    </script>
+</body>
+
+</html>
+
+</html>
