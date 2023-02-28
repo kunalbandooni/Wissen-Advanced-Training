@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Navigator Object</title>
+</head>
+
+<body>
+    <h1>All the attributes and methods of navigator object</h1>
+    <h2>PROPERTIES</h2>
+    <h4>appCodeName</h4>
+    <p id="appCodeName"></p>
+
+    <h4>appName</h4>
+    <p id="appName"></p>
+
+    <h4>appVersion</h4>
+    <p id="appVersion"></p>
+
+    <h4>cookieEnabled</h4>
+    <p id="cookieEnabled"></p>
+
+    <h4>geolocation</h4>
+    <p id="geolocation"></p>
+
+    <h4>language</h4>
+    <p id="language"></p>
+
+    <h4>onLine</h4>
+    <p id="onLine"></p>
+
+    <h4>platform</h4>
+    <p id="platform"></p>
+
+    <h4>product</h4>
+    <p id="product"></p>
+
+    <h4>userAgent</h4>
+    <p id="userAgent"></p>
+
+    <h2>METHODS</h2>
+    <h4>javaEnabled()</h4>
+    <p id="javaEnabled"></p>
+
+    <h4>taintEnabled()</h4>
+    <p id="userAgent"></p>
+    <script>
+        // Properties
+        // appCodeName - returns browser code name
+        let browser = navigator.appCodeName;
+        document.getElementById("appCodeName").innerHTML = "Browser code name is : " + browser;
+
+        // appName - returns browser name
+        let browser_name = navigator.appCodeName;
+        document.getElementById("appName").innerHTML = "Browser code name is : " + browser;
+
+        // appVersion - returns browser version
+        let version = navigator.appVersion;
+        document.getElementById("appVersion").innerHTML = "Browser version:<br>" + version;
+
+        // cookieEnabled - resturns true if cookie enabled
+        let cookies = navigator.cookieEnabled;
+        document.getElementById("cookieEnabled").innerHTML = "Cookies enabled: " + cookies;
+
+        // geolocation - returns location of user
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            document.getElementById("geolocation").innerHTML =
+                "Geolocation is not supported by this browser.";
+        }
+
+        function showPosition(position) {
+            document.getElementById("geolocation").innerHTML =
+                "Latitude: " + position.coords.latitude + "<br>" +
+                "Longitude: " + position.coords.longitude;
+        }
+
+        // language - returns browser language
+        let language = navigator.language;
+        document.getElementById("language").innerHTML = "Browser language: " + language;
+
+        // onLine - returns true if browser online
+        let online = navigator.onLine;
+        document.getElementById("onLine").innerHTML = "Browser online: " + online;
+
+        // platform - returns browser platform
+        let platform = navigator.platform;
+        document.getElementById("platform").innerHTML = "Platform: " + platform;
+
+        // product - returns browser engine Name
+        let browser_product = navigator.product;
+        document.getElementById("product").innerHTML = "Browser product: " + browser_product;
+
+        // userAgent - returns browser user-agent header
+        let agent = navigator.userAgent;
+        document.getElementById("userAgent").innerHTML = "User-agent:<br>" + agent;
+
+        // Methods
+        // javaEnabled() - tells if your browser has java enabled or not
+        let java = navigator.javaEnabled();
+        document.getElementById("javaEnabled").innerHTML = "Java Enabled: " + java;
+
+        // taintEnabled() - tells if browser has data tainting enabled or not
+        // gives runtime error
+    </script>
+</body>
+
+</html>

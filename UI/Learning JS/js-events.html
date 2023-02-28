@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>EVENTS JS</title>
+</head>
+
+<body onload="onLoad()" onunload="onUnLoad()" onresize="onResize()">
+    <h1>JAVASCRIPT EVENTS</h1>
+
+    <section>
+        <h3>MOUSE EVENTS</h3>
+
+        <h5>click</h5>
+        <button onclick="click_demo() ">CLICK</button>
+        <p id="click "></p>
+
+        <h5>mouseover and mouseout</h5>
+        <img onmouseover="bigImg(this) " onmouseout="normalImg(this) " border="0 " src="img1.jpg " alt="img1 " width="32 " height="32 ">
+
+        <h5>mousedown and mouseup</h5>
+        <p id="mouse " onmousedown="mouseDown() " onmouseup="mouseUp() ">
+            The mouseDown() function sets the color of this text to red. The mouseUp() function sets the color of this text to blue.
+        </p>
+
+        <h5>mousemove</h5>
+        <div onmousemove="mouse_move(event) " onmouseout="clearCoor() " style="width: 200px;height: 100px;border: 1px solid black; "></div>
+        <p>Mouse over the rectangle above, and get the coordinates of your mouse pointer.</p>
+        <p id="mouse_move "></p>
+    </section>
+
+    <section>
+        <h3>KEYBOARD EVENTS</h3>
+
+        <h5>Keydown</h5>
+        <p>Press a key in the input field:</p>
+        <input type="text " onkeydown="Keydown_demo() ">
+        <p id="Keydown "></p>
+
+        <h5>Keyup</h5>
+        Enter anything: <input type="text " id="fname " onkeyup="Keyup_demo() ">
+    </section>
+
+    <section>
+        <h3>FORM EVENTS</h3>
+
+        <h5>blur</h5>
+        Enter anything: <input type="text " id="fname1 " onblur="blur_demo() ">
+
+        <h5>change</h5>
+        <select id="select1 " onchange="change_demo() ">
+            <option value="Audi ">Audi</option>
+            <option value="BMW ">BMW</option>
+            <option value="Mercedes ">Mercedes</option>
+            <option value="Volvo ">Volvo</option>
+        </select>
+        <p id="change "></p>
+
+        <h5>focus</h5>
+        Enter anything: <input type="text " onfocus="focus_demo(this) ">
+
+        <form action="/action_page.php " onsubmit="submit_demo() ">
+            <h5>submit</h5>
+            Enter anything: <input type="text " name="fname ">
+            <input type="submit " value="Submit ">
+        </form>
+    </section>
+
+    <section>
+        <h3>WINDOW/DOCUMENT EVENTS</h3>
+        <h5>load</h5>
+        <h5>unload</h5>
+        <h5>resize</h5>
+        <p id="resize"></p>
+    </section>
+
+
+    <script>
+        // Click
+        function click_demo() {
+            document.getElementById("click ").innerHTML = "Hello World ";
+        }
+
+        // MouseOver and MouseOut
+        function bigImg(x) {
+            x.style.height = "180px ";
+            x.style.width = "220px ";
+        }
+
+        function normalImg(x) {
+            x.style.height = "60px ";
+            x.style.width = "60px ";
+        }
+
+        // MouseDown and MouseUp
+        function mouseDown() {
+            document.getElementById("mouse ").style.color = "red ";
+        }
+
+        function mouseUp() {
+            document.getElementById("mouse ").style.color = "blue ";
+        }
+
+        // MouseMove
+        function mouse_move(e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            let coor = "Coordinates: ( " + x + ", " + y + ") ";
+            document.getElementById("mouse_move ").innerHTML = coor;
+        }
+
+        function clearCoor() {
+            document.getElementById("mouse_move ").innerHTML = " ";
+        }
+
+        // KeyDown - calls a function when user presses a key
+        function Keydown_demo() {
+            document.getElementById("Keydown ").innerHTML = "You pressed a key inside the input field ";
+        }
+
+        // KeyUp - calls a functionhen user releases a key
+        function Keyup_demo() {
+            let x = document.getElementById("fname ");
+            x.value = x.value.toUpperCase();
+        }
+
+        // Blur - calls function after we leave field
+        function blur_demo() {
+            let x = document.getElementById("fname1 ");
+            x.value = x.value.toUpperCase();
+        }
+
+        // Change - calls after change
+        function change_demo() {
+            var x = document.getElementById("select1 ").value;
+            document.getElementById("change ").innerHTML = "You selected: " + x;
+        }
+
+        // Focus - calls when selected
+        function focus_demo(x) {
+            x.style.background = "yellow ";
+        }
+
+        // Submit - calls when submitted
+        function submit_demo() {
+            alert("The form was submitted ");
+        }
+
+        // Load - called when page is loaded
+        function onLoad() {
+            alert("Page is loaded ");
+        }
+
+        // Unloaded - called when page is unloaded
+        function onUnLoad() {
+            alert("Thank you for visiting ");
+        }
+
+        // Resize - called when page is resized
+        function onResize() {
+            var w = window.outerWidth;
+            var h = window.outerHeight;
+            var txt = "Window size: width=" + w + ", height=" + h;
+            document.getElementById("resize").innerHTML = txt;
+        }
+    </script>
+</body>
+
+</html>

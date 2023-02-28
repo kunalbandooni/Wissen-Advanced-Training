@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOCUMENT OBJECT</title>
+</head>
+
+<body>
+    <h1>All the Document Obejct Attributes and Methods will be put here...</h1>
+    <h3>PROPERTIES</h3>
+    <h6>cookie</h6>
+    <p id="cookie"></p>
+    <br>
+    <h6>domain</h6>
+    <p id="domain"></p>
+    <br>
+    <h6>lastModified</h6>
+    <p id="last-modified"></p>
+    <br>
+    <h6>readyState</h6>
+    <p id="ready-state"></p>
+    <br>
+    <h6>referrer</h6>
+    <p id="referrer"></p>
+    <br>
+    <h6>title</h6>
+    <p id="title"></p>
+    <br>
+    <h6>URL</h6>
+    <p id="url"></p>
+
+
+    <h3>METHODS</h3>
+    <h6>open()</h6>
+    <button onclick="open_f()">OPEN</button>
+    <br>
+    <h6>close()</h6>
+    <button onclick="close_f()">CLOSE</button>
+    <br>
+    <h6>write()</h6>
+    <button onclick="write_f()">WRITE</button>
+    <br>
+    <h6>writeIn()</h6>
+    <button onclick="writeIn_f()">WRITE - IN</button>
+    <br>
+    <h6>getElementById()</h6>
+    <button onclick="getElementById_f()">GET ELEMENT BY ID</button>
+    <p id="getById">color changes on click</p>
+    <br>
+    <h6>getElementByTagName()</h6>
+    <button onclick="getElementByTagName_f() ">GET ELEMENT BY TAG NAME</button>
+    <h4>This should change</h4>
+    <script>
+        // PROPERTIES
+
+        // Cookie - returns document cookies
+        let cookies = document.cookie;
+        document.getElementById("cookie").innerHTML = cookies;
+
+        // Domain - returns domain property (null if created in memory)
+        let myDomain = document.domain;
+        document.getElementById("domain").innerHTML = myDomain;
+
+        // Last Modified - returns date and time of last modified
+        const date = new Date(document.lastModified);
+        document.getElementById("last-modified").innerHTML = date;
+
+        // Ready State - returns the (loading) status of current doc
+        document.getElementById("ready-state").innerHTML = document.readyState;
+
+        // Referrer - returns the URL of document that loaded the current document
+        document.getElementById("referrer").innerHTML = document.referrer;
+
+        // Title - returns title of document
+        document.title = "New One For Demonstration";
+        document.getElementById("title").innerHTML = document.title;
+
+        // URL - returns the URL of document
+        document.getElementById("url").innerHTML = document.URL;
+
+        // METHOD
+
+        // open() - opens a document for writing
+        function open_f() {
+            const myWindow = window.open();
+            myWindow.document.open();
+        }
+
+        // close() - closes the document
+        function close_f() {
+            const myWindow = window.open();
+            myWindow.document.open();
+            myWindow.document.close();
+        }
+
+        // write() - deletes all existing HTML and writes its own.
+        function write_f() {
+            document.write("Hello!! ");
+            document.write("Bye!! ");
+        }
+
+        // writeIn() - write() but with newline character in the end...
+        function writeIn_f() {
+            document.writeIn("Hello!! ");
+            document.writeIn("Hello!! ");
+        }
+
+        // getElementById() - gets the element by ID
+        function getElementById_f() {
+            document.getElementById("getById").style.color = "red ";
+        }
+
+        // getElementbyTagName()
+        function getElementByTagName_f() {
+            document.getElementsByTagName("h4")[0].innerHTML = "This is how!";
+        }
+    </script>
+</body>
+
+</html>

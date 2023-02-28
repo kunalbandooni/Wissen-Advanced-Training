@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WINDOW OBJECT</title>
+</head>
+
+<body>
+    <h1>WINDOW OBJECT</h1>
+    <h3>alert</h3>
+    <button onclick="alert_demo()">Alert</button>
+    <h3>atob</h3>
+    <p id="atob_demo"></p>
+    <h3>console</h3>
+    <p>Check cosole-log</p>
+    <h3>document</h3>
+    <p id="doc"></p>
+    <h3>frame</h3>
+    <button onclick="frame_demo()">Frame Changes</button>
+    <h3>location</h3>
+    <p id="location"></p>
+    <h3>window-name</h3>
+    <p id="window-name"></p>
+    <h3>window-opener</h3>
+    <p id="window-opener"></p>
+    <button onclick="window_opener_demo()">OPENER</button>
+    <h3>Resize-By</h3>
+    <button onclick="openWin()">Create window</button>
+    <h3>Prompt</h3>
+    <button onclick="prompt_demo()">Try it</button>
+    <p id="prompt"></p>
+
+    <script>
+        // alert
+        function alert_demo() {
+            alert("Hello! I am an alert box!");
+        }
+
+        // atob
+        let text = "Hello World!";
+        let encoded = window.btoa(text);
+        let decoded = window.atob(encoded);
+
+        document.getElementById("atob_demo").innerHTML = "Encoded: " + encoded + "<br>" + "Decoded: " + decoded;
+
+        // console
+        console.error("Noice");
+
+        // document
+        document.getElementById("doc").innerHTML = "Hiii";
+
+        // frame
+        function frame_demo() {
+            const frame = window.frameElement;
+            if (frame) {
+                frame.src = "https://www.google.com/";
+            }
+        }
+
+        // location 
+        let origin = location.origin;
+        document.getElementById("location").innerHTML = origin;
+
+        // window-name
+        window.name = "nice nice window name now...";
+        document.getElementById("window-name").innerHTML = window.name;
+
+        // window-opener
+        function window_opener_demo() {
+            const myWindow = window.open("", "", "width=300,height=300");
+            myWindow.opener.document.getElementById("window-opener").innerHTML = "HELLO!";
+        }
+
+        // resizeBy
+        function openWin() {
+            myWindow = window.open("", "", "width=200, height=100");
+        }
+
+        // prompt
+        function prompt_demo() {
+            let person = prompt("Name :", "James Bond");
+            if (person != null) {
+                document.getElementById("prompt").innerHTML = "Hello " + person + "! How are you today?";
+            }
+        }
+    </script>
+</body>
+
+</html>

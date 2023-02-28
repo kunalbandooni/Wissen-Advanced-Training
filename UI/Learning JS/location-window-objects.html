@@ -7,72 +7,100 @@
 
 <body>
     <h1>ALL THE LOCATION WINDOW OBJECTS WILL BE PUT HERE...</h1>
-    <br><br>
+    <h3>PROPERTIES</h3>
     <h5>HASH</h5>
     <p id="hash"></p>
-    <br><br>
+    <br>
     <h5>HOST</h5>
     <p id="host"></p>
-    <br><br>
+    <br>
     <h5>HOSTNAME</h5>
     <p id="hostname"></p>
-    <br><br>
+    <br>
     <h5>HREF</h5>
-    <p id="href"></p>
-    <br><br>
+    <button onclick="href()">Try this HREF</button>
+    <br>
     <h5>ORIGIN</h5>
     <p id="origin"></p>
-    <br><br>
+    <br>
     <h5>PATHNAME</h5>
     <p id="pathname"></p>
-    <br><br>
+    <br>
     <h5>PORT</h5>
+    <p>NOTE: If the port number is default (80 for http and 443 for https), most browsers return nothing.</p>
     <p id="port"></p>
-    <br><br>
+    <br>
     <h5>PROTOCOL</h5>
     <p id="protocol"></p>
-    <br><br>
+    <br>
     <h5>SEARCH</h5>
     <p id="search"></p>
-    <br><br>
+    <br>
+    <h3>METHODS</h3>
+    <h5>ASSIGN</h5>
+    <button onclick="assign_m()">ASSIGN</button>
+    <br>
+    <h5>RELOAD</h5>
+    <button onclick="reload_m()">RELOAD</button>
+    <br>
+    <h5>REPLACE</h5>
+    <button onclick="replace_m()">REPLACE</button>
     <script>
         // I will be trying all functions right here... 
 
+        // PROPERTIES
         // Hash 
         let hash_temp = window.location.hash;
         document.getElementById("hash").innerHTML = hash_temp;
 
-        // Host
+        // Host - returns host IP or domain (host might include the port)
         let host_temp = window.location.host;
         document.getElementById("host").innerHTML = host_temp;
 
-        // Hostname
+        // Hostname - returns host IP or domain (hostname does not include the port)
         let hostname_temp = window.location.hostname;
         document.getElementById("hostname").innerHTML = hostname_temp;
 
-        // Href
-        let href_temp = window.location.href;
-        document.getElementById("href").innerHTML = href_temp;
+        // Href - takes you to the anchor or the link given
+        function href() {
+            location.href = "https://www.google.co.in/imghp";
+        }
 
-        // Origin
+        // Origin - gives the protocol, hostname and port number of a URL
         let origin_temp = window.location.origin;
         document.getElementById("origin").innerHTML = origin_temp;
 
-        // Pathname
+        // Pathname - gives the current path name
         let pathname_temp = window.location.pathname;
         document.getElementById("pathname").innerHTML = pathname_temp;
 
-        // Port
+        // Port - gives the current port number
         let port_temp = window.location.port;
-        document.getElementById("port").innerHTML = port_temp;
+        document.getElementById("port").innerHTML = "Current port number is : " + port_temp;
 
-        // Protocol
+        // Protocol - gives the current protocol including ":"
         let protocol_temp = window.location.protocol;
         document.getElementById("protocol").innerHTML = protocol_temp;
 
-        // Search
+        // Search - return queryString part of URL including "?"
         let search_temp = window.location.search;
         document.getElementById("search").innerHTML = search_temp;
+
+        // METHODS
+        // Assign - can go back to index page
+        function assign_m() {
+            location.assign("https://www.google.com/");
+        }
+
+        // Reload - reloads the current page
+        function reload_m() {
+            location.reload();
+        }
+
+        // Replace - cannot go back to index page
+        function replace_m() {
+            location.replace("https://www.yahoo.com/")
+        }
     </script>
 </body>
 
