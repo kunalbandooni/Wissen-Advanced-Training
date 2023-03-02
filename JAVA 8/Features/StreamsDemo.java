@@ -35,7 +35,10 @@ public class StreamsDemo {
         peek();
         counting();
         iterator();
+
+        // not working... -> 0 de rha...
         generate();
+        
         skip();
         summaryStatistics();
         builder();
