@@ -6,6 +6,10 @@ interface Drawable1{
 
 interface Math{
     public int sum(int x, int y);
+
+    public static int sqrt(Integer n) {
+        return 0;
+    }
 }
 
 public class Lambda {
