@@ -10,6 +10,10 @@ interface Math{
     public static int sqrt(Integer n) {
         return 0;
     }
+
+    public static int random() {
+        return 0;
+    }
 }
 
 public class Lambda {
