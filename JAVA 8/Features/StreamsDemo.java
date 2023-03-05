@@ -17,7 +17,7 @@ public class StreamsDemo {
         anyMatch();
         noneMatch();
         
-        // not working
+        // not working... -> 0 de rha...
         mapToLong();
         
         findAny();
