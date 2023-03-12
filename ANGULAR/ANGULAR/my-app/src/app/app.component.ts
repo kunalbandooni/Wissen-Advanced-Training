@@ -7,6 +7,7 @@ import { transpileModule } from 'typescript';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'helloWorld!!';
 
   // used for one way data binding
@@ -44,10 +45,10 @@ export class AppComponent {
   ];
 
   // NG FOR in TABLE
-  onEdit(){
+  onEditTemp(){
     alert("EDIT");
   }
-  onDelete(){
+  onDeleteTemp(){
     alert("DELETE");
   }
 
@@ -84,11 +85,26 @@ export class AppComponent {
   strBgColor = "limegreen";
 
   // LOGIN AND REGISTERATION
-  bLog: boolean = false;
+  bLog: boolean = true;
+  bReg: boolean = false;
   displayLog(){
     this.bLog = true;
+    this.bReg = false;
   }
   displayRegister(){
     this.bLog = false;
+    this.bReg = true;
   }
+
+  // making of edit and delete
+  onDelete(i: number){
+    this.userList.splice(i, 1);
+  }
+  onEdit(i: number){
+    let name: string|null = prompt("Type new Name :");
+    let b = confirm("Confirm or Deny...");
+    this.userList.splice(i, 1);
+    // a little bit of changes to be done here...
+  }
+
 }
