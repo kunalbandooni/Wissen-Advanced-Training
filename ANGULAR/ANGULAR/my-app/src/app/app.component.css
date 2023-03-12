@@ -1,8 +1,21 @@
 div{
     background-color: rgba(211, 227, 238, 0.685);
+    padding: 10px;
 }
 
 img{
     width: 1000px;
     height: auto;
+}
+
+.customer{
+    background-color: rebeccapurple;
+}
+
+.employee{
+    background-color: brown;
+}
+
+.table{
+    border-color: rgb(237, 20, 172);
 }

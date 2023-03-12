@@ -26,49 +26,250 @@
   <img [src]="imgUrl"/>
 </div>
 
+<div [ngClass]=" (bCustomer == true)?'customer':'employee' ">
+  <form>
+    <span style="color: antiquewhite;">USER ID: </span>
+    <input type="text" name="uid">
+    <br/><br/>
+    <button class="btn btn-danger">LOGIN</button>
+  </form>
+  <br/>
+  <button type="button" (click)="changeToCustomer()">CUSTOMER?</button>
+  <button type="button" (click)="changeToEmployee()">EMPLOYEE?</button>
+</div>
+
+<div>
+  Color: <input type="text" [(ngModel)]="strColor"> 
+  Font Size: <input type="text" [(ngModel)]="strFontSize">
+  <p [ngStyle]="{'color':strColor, 'fontSize':strFontSize+'px'}">
+    THIS SHOULD CHANGE...
+  </p>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let user of userList">
+      ID: {{user.uid}}, Name: {{user.name}}
+    </li>
+  </ul>
+</div>
+
+<div class="table">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <th>NAME</th>
+      <th>UID</th>
+      <th>ACTION</th>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let user of userList">
+        <td>{{user.uid}}</td>
+        <td>{{user.name}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="onEdit()">EDIT</button>
+          <button class="btn btn-danger" (click)="onDelete()">DELETE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <input class="btn btn-success" (click)="displayLogin()" value="Login"/>
+  <input class="btn btn-info" (click)="displayRegisteration()" value="Registeration"/>
+
+  <br/>
+
+  <ng-container *ngIf="bLogin == true; then displayLoginForm; else displayRegisterationForm"></ng-container>
+
+  <ng-template #displayLoginForm>
+    <h2>Login Form</h2>
+  </ng-template>
+
+  <ng-template #displayRegisterationForm>
+    <h2>Registeration Form</h2>
+  </ng-template>
+
+</div>
+
+<div>
+  <p>Enter data between 1 to 5</p>
+  <input type="text" [(ngModel)]="nData">
+  <br/>
+
+  <div [ngSwitch]='nData'>
+    <div *ngSwitchCase="1">DATA IS 1</div>
+    <div *ngSwitchCase="2">DATA IS 2</div>
+    <div *ngSwitchCase="3">DATA IS 3</div>
+    <div *ngSwitchCase="4">DATA IS 4</div>
+    <div *ngSwitchCase="5">DATA IS 5</div>
+    <div *ngSwitchDefault>Only 1 to 5 accepted</div>
+  </div>
+</div>
+
+<div>
+  <p appHighLight>HOVER HERE...</p>
+</div>
+
+<div>
+  <input type="number" [(ngModel)]="nTimeInSeconds"/>
+  <button class="btn btn-success" (click)="convertTimeToMillis()">CLICK</button>
+
+  <div *appDelay="nTimeInMilliSeconds">
+    <p>DISPLAY IN STRUCTURAL DIRECTIVE...</p>
+  </div>
+
+</div>
+
+
+<div>
+  <h3>ngStyle Attribute Directive</h3>
+  <table>
+    <tr>
+      <td>Color : </td>
+      <td><input type="text" [(ngModel)]="strColor"></td>
+    </tr>
+    <tr>
+      <td>Font Size : </td>
+      <td><input type="text" [(ngModel)]="strSize"></td>
+    </tr>
+    <tr>
+      <td>Font Family : </td>
+      <td><input type="text" [(ngModel)]="strFontFamily"></td>
+    </tr>
+    <tr>
+      <td>Text Align : </td>
+      <td><input type="text" [(ngModel)]="strTextAlign"></td>
+    </tr>
+    <tr>
+      <td>Margin : </td>
+      <td><input type="text" [(ngModel)]="strMargin"></td>
+    </tr>
+    <tr>
+      <td>Pading : </td>
+      <td><input type="text" [(ngModel)]="strPadding"></td>
+    </tr>
+    <tr>
+      <td>Opacity : </td>
+      <td><input type="text" [(ngModel)]="strOpacity"></td>
+    </tr>
+    <tr>
+      <td>Background Color : </td>
+      <td><input type="text" [(ngModel)]="strBgColor"></td>
+    </tr>
+  </table>
+
+  <p [ngStyle] = "{'color':strColor,
+                    'fontSize':strSize,
+                    'fontFamily':strFontFamily,
+                    'textAlign':strTextAlign,
+                    'margin':strMargin+'px',
+                    'padding':strPadding+'px',
+                    'opacity':strOpacity,
+                    'backgroundColor':strBgColor
+  }">
+  THIS WILL CHANGE...</p>
+</div>
+
+<ng-container *ngIf="bLog == true; then displayLog; else displayRegister"></ng-container>
+
+<ng-template #displayLog>
+<div>
+  <h2>LOGIN</h2>
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Log in</button>
+  </form>
+  </div>
+</ng-template>
+
+<ng-template #displayRegister>
+<div>
+  <h2>REGISTER</h2>
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Name">Full Name</label>
+        <input type="name" class="form-control" id="inputEmail4" placeholder="Name">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="street name, etc">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>Delhi</option>
+          <option>Karnataka</option>
+          <option>Uttarakhand</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          I agree to Terms and Conditions
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+<button type="button" (click)="displayLog()">LOGIN</button>
+</ng-template>
 
 
 
 <!-- BOOTSTRAP -->
 <div>
   <h1>BOOTSTRAP</h1>
+  
   <div class="alert alert-primary" role="alert">
     A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
   </div>
   <div class="alert alert-dark" role="alert">
     A simple dark alert—check it out!
   </div>
   
-    
-  
-  
   <button type="button" class="btn btn-primary">
     Notifications <span class="badge badge-light">4</span>
   </button>
   
-  
-  
   <span class="badge badge-primary">Primary</span>
   <span class="badge badge-pill badge-secondary">Secondary</span>
+  
   <a href="#" class="badge badge-success">Success</a>
+  
   <span class="badge badge-danger">Danger</span>
   <span class="badge badge-warning">Warning</span>
   <span class="badge badge-info">Info</span>
