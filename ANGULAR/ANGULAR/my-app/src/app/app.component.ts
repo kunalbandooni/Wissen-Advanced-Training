@@ -101,10 +101,12 @@ export class AppComponent {
     this.userList.splice(i, 1);
   }
   onEdit(i: number){
-    let name: string|null = prompt("Type new Name :");
-    let b = confirm("Confirm or Deny...");
-    this.userList.splice(i, 1);
+    let name: string = prompt("Type new Name :");
+    //this.userList.splice(i, 1, );
     // a little bit of changes to be done here...
+
+    const tempIndex = this.userList.findIndex(user => user.uid === i);
+    this.userList[tempIndex] = {i, name}
   }
 
 }
