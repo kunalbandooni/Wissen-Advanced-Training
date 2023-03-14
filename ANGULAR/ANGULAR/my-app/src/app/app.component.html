@@ -1,11 +1,70 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div>
+  <button routerLinkActive="active" routerLink="PipesDemo">PIPES</button>
+</div>
+
+<div>
+  CUSTOM PIPES
+  <br/>
+  ENTER IN CELSIUS : <input type="number" [(ngModel)]="nCelsius"/>
+  <br/>
+  Given data in celsius: {{nCelsius}} <br/>
+  Celsius to Farenheit: {{nCelsius | tempConvertor:'ToFarenheit'}}
+  <br>
+  <br>
+  ENTER IN FARENHEIT : <input type="number" [(ngModel)]="nFarenheit"/>
+  <br/>
+  Given data in Farenheit: {{nFarenheit}} <br/>
+  Farenheit to Celsius: {{nFarenheit | tempConvertor:'ToCelsius'}}
+</div>
+
+<!--
+<div>
+  <button class="btn btn-primary" (click)="readProductData()">READ DATA</button>
+
+  <table class="table table-bordered">
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+    </tr>
+    <tr *ngFor="let ob of arr">
+      <td>{{ob.id}}</td>
+      <td>{{ob.name}}</td>
+    </tr>
+  </table>
+
+</div>
+-->
+
+
+
+<div>
+  <h3>GET</h3>
+  <button class="btn btn-success" (click)="getAllEmployeeData()">READ DATA</button>
+  <br><br>
+  <h3>INSERT</h3>
+  <input type="number" [(ngModel)]="idTempPOST"/>
+  <input type="text" [(ngModel)]="nameTempPOST"/>
+  <button class="btn btn-danger" (click)="addDataToDB()">INSERT DATA</button>
+
+  <table class="table table-bordered table-hover">
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>ACTION</td>
+    </tr>
+    <tr *ngFor="let ob of empArr">
+      <td>{{ob.id}}</td>
+      <td>{{ob.name}}</td>
+      <td>
+        <button class="btn btn-outline-success" (click)="editRecord(ob.id)">EDIT</button>
+        <button class="btn btn-outline-danger" (click)="deleteRecord(ob.id)">DELETE</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
 
 <div>
   <h1><span>Welcome : {{strName}}</span></h1>

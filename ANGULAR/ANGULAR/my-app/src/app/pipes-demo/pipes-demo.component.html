@@ -1,0 +1,47 @@
+HELLO USER!! 
+<br>
+Pipes here...
+
+<div>
+    <h3>CURRENCY and DATA PIPES</h3>
+    <input type="number" [(ngModel)]="nCurrencyData"/>
+    {{nCurrencyData | currency : 'INR'}}
+    <br><br>
+    Date in millis seconds : {{nDateInMillis}}
+    <br><br>
+    After using date pipe: {{nDateInMillis | date}}
+    <br><br>
+    Date Object using new Date() : {{nDate}}
+    <br><br>
+    Date Object with date pipe: {{nDate | date}}
+    <br><br>
+    Short Date: {{nDate | date: 'short' }} 
+    <br><br>
+    Medium Date: {{nDate | date: 'medium'}}
+    <br><br>
+    Long Date: {{nDate | date: 'long'}}
+</div>
+
+<div>
+    Employee Object Data: {{empObj}} <br>
+    Employee Object Data using JSON pipe: {{empObj | json}}
+</div>
+
+<div>
+    <input type="text" [(ngModel)]="strDataForSlicing"/>
+    <br><br>
+
+    Original Data : {{strDataForSlicing}} <br/>
+
+    Slicing from 3rd character to 5th : {{strDataForSlicing | slice : 2:5}}
+
+    Slicing from 3rd character to last 2 characters : {{strDataForSlicing | slice : 2:-2}}
+
+    Slicing from 3rd character to end : {{strDataForSlicing | slice : 2}}
+
+    Slicing last 2 charactes : {{strDataForSlicing | slice : -2}}
+</div>
+
+<div>
+    
+</div>

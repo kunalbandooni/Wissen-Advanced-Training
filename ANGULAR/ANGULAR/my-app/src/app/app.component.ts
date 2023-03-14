@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { transpileModule } from 'typescript';
+import { Employee } from './Employee';
+import { Products } from './Products';
+import { ProductsService } from './products.service';
+import { RestService } from './rest.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +12,76 @@ import { transpileModule } from 'typescript';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // CUSTOM PIPES
+  nCelsius: number = 1;
+  nFarenheit: number = 1;
+
+  // PRODUCT PIPES
+  /*constructor(private productService: ProductsService){}
+  arr : Products[] = [];
+  readProductData(){
+    this.arr = this.productService.getAllProducts();
+  }*/
+
+  //JSON SERVER
+  constructor(private httpService: RestService){}
+  empArr : Employee[] = [];
+
+  // GET
+  getAllEmployeeData(){
+    this.httpService.getAllData().subscribe({
+      next: (data: Employee[]) => {this.empArr = data;},
+      error: (err: any) => console.log(err)
+    })
+  }
+
+  // POST
+  idTempPOST: number = 0;
+  nameTempPOST: string = "";
+  addDataToDB(){
+    let empObj: Employee = new Employee(this.idTempPOST, this.nameTempPOST);
+    if(!(this.nameTempPOST === "")){
+      this.httpService.insertData(empObj).subscribe({
+        next: (data) => { console.log(JSON.stringify(data));
+                          this.getAllEmployeeData();
+                        },
+        error: (err) => console.log(err)
+      })
+    }
+  }
+
+  // PUT
+  idTempPUT: number = 0;
+  nameTempPUT: string = "";
+  editRecord(id: number){
+    this.idTempPUT = id;
+    this.nameTempPUT = String(prompt("NAME"));
+
+    let empObj: Employee = new Employee(this.idTempPUT, this.nameTempPUT);
+    for(let x of this.empArr){
+      if(x.id == this.idTempPUT){
+        if(!(this.nameTempPUT === "")){
+          this.httpService.editRecord(empObj).subscribe({
+            next: (data) => { console.log(JSON.stringify(data));
+                              this.getAllEmployeeData();
+                            },
+            error: (err) => console.log(err)
+          })
+        }
+      }
+    }
+  }
+
+  // DELETE
+  deleteRecord(empID: number){
+    this.httpService.deleteRecord(empID).subscribe({
+      next: (data) => { console.log(JSON.stringify(data));
+                        this.getAllEmployeeData();
+                      },
+      error: (err) => console.log(err)
+    })
+  }
+
 
   title = 'helloWorld!!';
 
@@ -101,12 +176,13 @@ export class AppComponent {
     this.userList.splice(i, 1);
   }
   onEdit(i: number){
-    let name: string = prompt("Type new Name :");
+    let name: string|null = prompt("Type new Name :");
     //this.userList.splice(i, 1, );
     // a little bit of changes to be done here...
 
     const tempIndex = this.userList.findIndex(user => user.uid === i);
-    this.userList[tempIndex] = {i, name}
+    //this.userList[tempIndex] = {i, name}
   }
 
+  
 }

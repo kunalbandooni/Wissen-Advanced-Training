@@ -6,17 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HighLightDirective } from './high-light.directive';
 import { DelayDirective } from './delay.directive';
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { TempConvertorPipe } from './temp-convertor.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HighLightDirective,
-    DelayDirective
+    DelayDirective,
+    PipesDemoComponent,
+    TempConvertorPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
