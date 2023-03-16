@@ -9,6 +9,7 @@ import { DelayDirective } from './delay.directive';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 import { TempConvertorPipe } from './temp-convertor.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     HighLightDirective,
     DelayDirective,
     PipesDemoComponent,
-    TempConvertorPipe
+    TempConvertorPipe,
+    NoPageFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
-import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
-  {path:"", component: AppComponent},
-  {path:"Pipes", component: PipesDemoComponent},
+  {path:"", component: HomeComponent},
+  {path:"Home", component: HomeComponent},
+  {path:"Products", component: ProductsComponent},
   {path:"**", component: NoPageFoundComponent}
 ];
 

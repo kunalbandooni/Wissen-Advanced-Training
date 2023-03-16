@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bootstrap": {
+    "RoutingDemo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bootstrap",
+            "outputPath": "dist/routing-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,7 +25,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -61,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bootstrap:build:production"
+              "browserTarget": "RoutingDemo:build:production"
             },
             "development": {
-              "browserTarget": "bootstrap:build:development"
+              "browserTarget": "RoutingDemo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bootstrap:build"
+            "browserTarget": "RoutingDemo:build"
           }
         },
         "test": {
@@ -97,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "d8932d24-0440-49d8-ac44-555d3952ba08"
+    "analytics": "61f16896-487f-45bc-81f9-51eb290e4903"
   }
 }

@@ -1,47 +1,85 @@
-HELLO USER!! 
-<br>
-Pipes here...
+<div class="container">
+    HELLO USER!! 
+    <br>
+    Pipes here...
+</div>
 
-<div>
-    <h3>CURRENCY and DATA PIPES</h3>
-    <input type="number" [(ngModel)]="nCurrencyData"/>
-    {{nCurrencyData | currency : 'INR'}}
-    <br><br>
-    Date in millis seconds : {{nDateInMillis}}
-    <br><br>
-    After using date pipe: {{nDateInMillis | date}}
-    <br><br>
-    Date Object using new Date() : {{nDate}}
-    <br><br>
-    Date Object with date pipe: {{nDate | date}}
-    <br><br>
-    Short Date: {{nDate | date: 'short' }} 
-    <br><br>
-    Medium Date: {{nDate | date: 'medium'}}
-    <br><br>
+<br>
+
+<div class="container">
+    <h4>Uppercase and Lowercase Pipes</h4>
+    Enter a string: <input type="text" [(ngModel)]="strToConvert"/>
+    <br>
+    Converted to UPPERCASE: {{strToConvert | uppercase}}
+    <br>
+    Converted to LOWERCASE: {{strToConvert | lowercase}}
+</div>
+
+<br>
+
+<div class="container">
+    <h4>Currency Pipes</h4>
+    <input type="number" [(ngModel)]="nCurrencyData"/> <br/>
+    INR: {{nCurrencyData | currency : 'INR'}} <br>
+    USD: {{nCurrencyData | currency : 'USD'}} <br>
+    EUR: {{nCurrencyData | currency : 'EUR'}} <br>
+</div>
+
+<br>
+
+<div class="container">
+    <h4>Date Pipes</h4>
+    Date in millis seconds : {{nDateInMillis}} <br>
+    After using date pipe: {{nDateInMillis | date}} <br>
+    Date Object using new Date() : {{nDate}} <br>
+    Date Object with date pipe: {{nDate | date}} <br>
+    Short Date: {{nDate | date: 'short' }} <br>
+    Medium Date: {{nDate | date: 'medium'}} <br>
     Long Date: {{nDate | date: 'long'}}
 </div>
 
-<div>
+<br>
+
+<div class="container">
+    <h4>JSON Pipes</h4>
+    JSON user object without JSON pipe: {{jsonUserObject}} <br>
+    JSON user object with JSON pipe: {{jsonUserObject | json}} <br>
+    
     Employee Object Data: {{empObj}} <br>
     Employee Object Data using JSON pipe: {{empObj | json}}
 </div>
 
-<div>
-    <input type="text" [(ngModel)]="strDataForSlicing"/>
-    <br><br>
+<br>
 
-    Original Data : {{strDataForSlicing}} <br/>
-
-    Slicing from 3rd character to 5th : {{strDataForSlicing | slice : 2:5}}
-
-    Slicing from 3rd character to last 2 characters : {{strDataForSlicing | slice : 2:-2}}
-
-    Slicing from 3rd character to end : {{strDataForSlicing | slice : 2}}
-
-    Slicing last 2 charactes : {{strDataForSlicing | slice : -2}}
+<div class="container">
+    <h4>Decimal Pipes</h4>
+    Original Data: {{numData}} <br>
+    Number in decimal format: {{numData | number: '1.0-2'}}
 </div>
 
-<div>
-    
+<br>
+
+<div class="container">
+    <h4>Percent Pipes</h4>
+    Original Data: {{percentData}} <br>
+    Data with percent: {{percentData | percent}} <br>
+    Data with percent 1.2-5: {{percentData | percent: '1.2-5'}} <br>
+    Data with percent 2.2-5: {{percentData | percent: '2.2-5'}} <br>
+    Data with percent 1.3-5: {{percentData | percent: '1.3-5'}}
+</div>
+
+<br>
+
+<div class="container">
+    <h4>Slice Pipes</h4>
+    <input type="text" [(ngModel)]="strDataForSlicing"/>
+    <br>
+    Original Data : {{strDataForSlicing}} <br/>
+    Slicing from 3rd character to 5th : {{strDataForSlicing | slice : 2:5}}
+    <br/>
+    Slicing from 3rd character to last 2 characters : {{strDataForSlicing | slice : 2:-2}}
+    <br/>
+    Slicing from 3rd character to end : {{strDataForSlicing | slice : 2}}
+    <br/>
+    Slicing last 2 charactes : {{strDataForSlicing | slice : -2}}
 </div>
