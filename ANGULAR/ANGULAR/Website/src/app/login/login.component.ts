@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +18,6 @@ export class LoginComponent implements OnInit{
   displayLoginForm(){
     this.loginActive = true;
     this.registerationActive = false;
-  }
-
-  try(){
-    alert("YES");
   }
 
   // to activate registeration form
@@ -44,7 +41,7 @@ export class LoginComponent implements OnInit{
     password: ''
   };
 
-  constructor(){}
+  constructor(private router: Router){}
 
   ngOnInit(): void{
     const localData = localStorage.getItem('signUpUsers');
@@ -63,12 +60,15 @@ export class LoginComponent implements OnInit{
     alert("ADDED USER");
   }
 
-  isUserExist: boolean = false;
+  user: string = "";
+  pass: string = "";
   onLogin(){
-    this.isUserExist = this.signUpUsers.find(m => m.username === this.loginObj.username && m.password === this.loginObj.password);
-    if(this.isUserExist == true)
-      alert("LOGIN SUCCESSFUL");
-    else
+    const isUserExist = this.signUpUsers.find(m => m.username == this.user && m.password == this.pass);
+    if(isUserExist != undefined){
+      this.router.navigate(['/Home']);
+    }
+    else{
       alert("NOT A VALID USER");
+    }
   }
 }

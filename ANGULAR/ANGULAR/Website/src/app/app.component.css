@@ -1,3 +1,11 @@
+/*----- background image -----*/
+body{
+    background-image: url('../assets/bg-img-t.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: blanchedalmond;
+}
+
 /*----- Header -----*/
 header{
     margin-bottom: 5px;
